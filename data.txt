@@ -1,0 +1,10 @@
+Ivan, Ivanov,M,10,55:20
+Anna, Smith,F,5,30:15
+John, Doe,M,10,90:45
+Emily, Johnson,F,5,40:30
+Michael, Williams,M,10,70:10
+Sophia, Brown,F,10,45:50
+William, Jones,M,5,110:25
+Olivia, Davis,F,5,20:40
+James, Miller,M,5,35:55
+Emma, Wilson,F,10,50:25
