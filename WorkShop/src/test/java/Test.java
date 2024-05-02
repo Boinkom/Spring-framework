@@ -1,6 +1,8 @@
 import org.example.CsvToString;
+import org.example.ManagerConfig;
 import org.example.Person;
 import org.example.SearchToFast;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +29,9 @@ public class Test {
 
     @org.junit.Test
     public void testSearchToFastWithMatchingCriteria() {
-        SearchToFast searchToFast = new SearchToFast();
-        ArrayList<Person> fastPerson = searchToFast.searchToFast(5, "M", "10");
+        var searchToFast = new AnnotationConfigApplicationContext(ManagerConfig.class);
+        var search = searchToFast.getBean(SearchToFast.class);
+        ArrayList<Person> fastPerson = search.searchToFast(5, "M", "10");
 
         // Проверяем, что список содержит только участников с заданным полом и дистанцией
         for (Person person : fastPerson) {
@@ -42,8 +45,9 @@ public class Test {
 
     @org.junit.Test
     public void testSearchToFastWithNonMatchingCriteria() {
-        SearchToFast searchToFast = new SearchToFast();
-        ArrayList<Person> fastPerson = searchToFast.searchToFast(5, "F", "5");
+        var searchToFast = new AnnotationConfigApplicationContext(ManagerConfig.class);
+        var search = searchToFast.getBean(SearchToFast.class);
+        ArrayList<Person> fastPerson = search.searchToFast(5, "M", "10");
 
         // Проверяем, что список пуст, потому что нет участников с заданным полом и дистанцией
         assertEquals(3, fastPerson.size());
